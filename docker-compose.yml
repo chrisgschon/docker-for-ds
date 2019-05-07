@@ -14,13 +14,12 @@ services:
     environment:
       DB_ENGINE: sql_server.pyodbc
       DB_NAME: master
+      DB_SERVER: host.docker.internal
       DB_PORT: 1433
       DB_DRIVER: "ODBC Driver 17 for SQL Server"
       DB_USER: sa
       DB_PWD: blogPWD123!
-
-    env_file: ./app/env.list
-
+      
     command: /bin/bash
 
   db:
