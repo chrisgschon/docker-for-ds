@@ -1,5 +1,5 @@
 # 👨🏼‍💻 docker-for-ds
-A practical introduction to Docker, showing how to use and combine Jupyter and MSSQL Server in local isolated Docker containers.
+A practical introduction to Docker for data scientists, showing how to use and combine Jupyter and MSSQL Server in local isolated Docker containers.
 
 Blog post.
 
@@ -18,7 +18,7 @@ We will be running two separate Docker containers:
 
 1. An ubuntu xenial container to run python code in Jupyter notebooks
 
-2. An MSSSQL Server linux container to host our dev database
+2. An MSSSQL Server linux container to host our  database
 
 Open a terminal in the root of the repo and run the following commands:
 
@@ -27,10 +27,12 @@ Open a terminal in the root of the repo and run the following commands:
 *Builds the images with docker-compose.yml acting as the configuration*
 
 ```docker-compose up -d```
+
 *Spins up the containers*
 
 ```docker-compose exec app bash```
-*Run bash from inside the 'app' container*
+
+*Runs bash from inside the 'app' container*
 
 You will be inside the container's terminal now, run:
 
@@ -52,7 +54,8 @@ Open a terminal and navigate to /app, then run
 
 ```docker build -t ds . ```
 
-*build image with tag 'ds'*
+*builds image with tag 'ds'*
 
 ```docker run --rm -it -p 8888:8888 ds```
-*run the ds image with ports mapped*
+
+*runs the ds image with notebook ports mapped*
