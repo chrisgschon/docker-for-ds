@@ -1,38 +1,58 @@
-# docker-for-ds
-An example of how Docker can be used to develop a data science project, with detailed walkthrough and blog post
+# 👨🏼‍💻 docker-for-ds
+A practical introduction to Docker, showing how to use and combine Jupyter and MSSQL Server in local isolated Docker containers.
+
+Blog post.
 
 
-# 🔑 Walkthrough
+## 🐳 Starting with Docker
 
+- Install Docker. This is a straightforward download from the [docs](https://docs.docker.com/install/).
 
-# 🆙 Starting with Docker
+- Open up the app and make sure there's a green light telling you it's running.
 
-docker-compose build
-docker-compose up -d
+- Follow the [hello-world tutorial](https://docs.docker.com/samples/library/hello-world/) to double check the installation works properly.
 
-docker-compose exec app bash
+## 🆙 Walkthrough
 
-jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+We will be running two separate Docker containers:
 
+1. An ubuntu xenial container to run python code in Jupyter notebooks
 
-Build the image locally:
+2. An MSSSQL Server linux container to host our dev database
 
-```docker build -t ds . ```
+Open a terminal in the root of the repo and run the following commands:
 
+```docker-compose build```
 
-- Then on your host's terminal, run:
+*Builds the images with docker-compose.yml acting as the configuration*
 
-```docker run --rm -it -p 8888:8888 ds```
+```docker-compose up -d```
+*Spins up the containers*
 
-- In the container
+```docker-compose exec app bash```
+*Run bash from inside the 'app' container*
+
+You will be inside the container's terminal now, run:
 
 ```jupyter notebook --ip 0.0.0.0 --no-browser --allow-root```
 
-- using the provided token, enter this into your browser
+Using the provided token, enter this into your browser
 
 ```http://localhost:8888/?token=URTOKEN```
 
-- run ETL script
+
+✅ The token provides a security measure to make sure hackers can't access your code and data!
 
 
-✅This is a security measure to make sure websites can't access your code and data!
+🎮 Running the notebook will extract Ninja's current Fortnite stats and load them into a fortnite table in your MSSQL instance. View your output table in a database management app. I like to use DBeaver.
+
+## How to only build the Jupyter environment
+
+Open a terminal and navigate to /app, then run
+
+```docker build -t ds . ```
+
+*build image with tag 'ds'*
+
+```docker run --rm -it -p 8888:8888 ds```
+*run the ds image with ports mapped*

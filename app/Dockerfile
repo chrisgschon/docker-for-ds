@@ -5,8 +5,7 @@ RUN apt-get update
 RUN apt-get -y install python3-pip
 RUN apt-get -y install htop
 
-
-#add in azure sql dependencies
+#add in ms sql dependencies
 RUN apt-get update
 RUN apt-get -y install apt-transport-https
 RUN apt-get -y install curl
