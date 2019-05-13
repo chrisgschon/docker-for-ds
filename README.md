@@ -1,7 +1,7 @@
 # 👨🏼‍💻 docker-for-ds
 A practical introduction to Docker for data scientists, showing how to use and combine Jupyter and MSSQL Server in local isolated Docker containers.
 
-Blog post.
+The medium post [here](https://medium.com/applied-data-science/the-full-stack-data-scientist-part-2-a-practical-introduction-to-docker-1ea932c89b57) for the longer tutorial. 
 
 
 ## 🐳 Starting with Docker
